@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 
 /*
- * 卡片生成
+  卡片生成
  */
         
 public class CardCreat : MonoBehaviour
@@ -14,10 +14,8 @@ public class CardCreat : MonoBehaviour
      public PerfabEmptyCard emptyCard; //不够三的倍数，进行补卡对象
      public PerfabCard perfabCard; //卡片预制体实体类对象
      public TextAsset jsonFile; //获取json文件
-     public GameObject cardPanel; //卡片面板
+     public GameObject cardPanel; //卡片面板，用于存放卡片
      
-     private int abscissaCardCount = 0;  //获取横坐标方向的卡片数量
-     private int ordinateCardCount = 0; //获取纵坐标方向的卡片数量
      private  string jsonData; //存放json文件中的数据
      
      void Start ()
@@ -85,8 +83,6 @@ public class CardCreat : MonoBehaviour
                      CardPrefab.backImage.sprite = Resources.Load<Sprite>("DailySelection/card/"+subType+"");
                  }
              }
-             abscissaCardCount++;
-             ordinateCardCount++;
          }
          
          //卡片数量不够3的倍数，进行补缺
@@ -101,9 +97,9 @@ public class CardCreat : MonoBehaviour
                  EmptyCardPrefab.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
                  EmptyCardPrefab.lose.sprite = Resources.Load<Sprite>("DailySelection/card/shop_lock");
                  EmptyCardPrefab.lose.rectTransform.sizeDelta = new Vector2(156, 218);
-                 abscissaCardCount++;
-                 ordinateCardCount++;
              }
+             
+             //根据纵向卡片数量，设置卡片面板的高度
              columnCard = (nullCard + jsonArray.Count) / 3;
              cardPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(250,600*columnCard);
          }

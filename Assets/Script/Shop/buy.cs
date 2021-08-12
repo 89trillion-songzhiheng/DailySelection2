@@ -27,15 +27,15 @@ public class buy : MonoBehaviour
     }
     public void ChangeStatus()
     {
-        int a = 0; //当前拥有的总金币数
+        int currentNumber = 0; //当前拥有的总金币数
         
         number = GameObject.Find("number").transform.GetComponent<Text>();
 
         if (int.Parse(number.text) >= int.Parse(btntext.text))
         {
-            a = int.Parse(number.text);
-            a -= int.Parse(btntext.text);;
-            number.text = a.ToString();
+            currentNumber = int.Parse(number.text);
+            currentNumber -= int.Parse(btntext.text);;
+            number.text = currentNumber.ToString();
         
             buyBefore.SetActive(false);
             buyAfter.SetActive(true);   

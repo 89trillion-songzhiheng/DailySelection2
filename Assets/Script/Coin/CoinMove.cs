@@ -6,14 +6,13 @@ using UnityEngine.UI;
 
 
 /*
- * 移动硬币
+  移动硬币
  */
 public class CoinMove : MonoBehaviour
 {
     public GameObject coinPanel; //展示金币飞行动画 
     public GameObject coin; //硬币对象
-    public GameObject treasure; //宝箱对象
-    public Button button; //按钮
+    public Button button; //宝箱卡片按钮
     
     public Text buttonText; //获取按钮文本框，
     public Text coinNumber; //获取当前总金币数    
@@ -36,8 +35,6 @@ public class CoinMove : MonoBehaviour
         //金币移动目标地址
         tragetPosition = new Vector3(190, 820, 0);
         
-        Debug.Log(treasure.transform.position);
-        Debug.Log(treasure.transform.TransformDirection(treasure.transform.position));
         //获取按钮文本，获取当前可生成金币的最大数
         buttonTextData= buttonText.text;
         lastBiggest = int.Parse(buttonTextData);
@@ -45,6 +42,10 @@ public class CoinMove : MonoBehaviour
         button.onClick.AddListener(CreatCoin);
     }
     
+    /*
+     金币移动的方法是先获取宝箱按钮上的数字，代表需要生成的金币数量，因为宝箱按钮的数字，点击一次就会增加5，所以要先获取点击之前的按钮上的数字，得到要生成的金币数，
+     当生成的金币移动到指定位置后，在生成下一个金币，直到金币全部生成并移动到指定位置。
+     */
     public void CreatCoin()
     {
         //初始化位置与缩放倍数
@@ -57,7 +58,7 @@ public class CoinMove : MonoBehaviour
         
         //初始化预制件实例
         coinPanel.SetActive(true);
-        coinPrefab  = Instantiate(coin);
+        coinPrefab = Instantiate(coin);
         coinPrefab.transform.SetParent(coinPanel.transform);
         coinPrefab.SetActive(true);
         coinPrefab.transform.localPosition = coinPrefabPosition;
@@ -83,6 +84,7 @@ public class CoinMove : MonoBehaviour
             //销毁到达目标地的实例
             Destroy(coinPrefab);
             
+            //计算到达目标地的金币数
             coinPrefabCount++;
         
             if (coinPrefabCount <= lastBiggest)
@@ -103,7 +105,6 @@ public class CoinMove : MonoBehaviour
         }
     }
     
-
     // Update is called once per frame
     void Update()
     {
