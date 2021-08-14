@@ -13,11 +13,13 @@ public class PerfabCard : MonoBehaviour
 
     public Button buyButton; //购买按钮
 
+    public GameObject button; //按钮对象
+    
     public Text btnText; //按钮文字
 
     public Image btnImage; //按钮图像
 
-    public Image buy; //购买成功图标
+    public GameObject buy; //购买成功图标
 
     public Image backImage; //卡片背景图
 
