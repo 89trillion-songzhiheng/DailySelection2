@@ -52,3 +52,7 @@
      3).BackButton //回退到开始界面
      4).CoinPanel //展示金币飞行的面板
      5).CoinTitle //展示当前金币数
+     
+**流程图**
+
+![image](https://github.com/89trillion-songzhiheng/DailySelection2/blob/main/picture/process.png)
