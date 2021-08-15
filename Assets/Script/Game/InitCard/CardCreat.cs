@@ -5,55 +5,56 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
-/*
-  卡片生成
- */
-        
+/// <summary> MyMethod is a method in the MyClass class.
+/// 卡片生成类
+/// </summary>
 public class CardCreat : MonoBehaviour
  {
-     public PerfabEmptyCard emptyCard; //不够三的倍数，进行补卡对象
-     public PerfabCard perfabCard; //卡片预制体实体类对象
      public GameObject cardPanel; //卡片面板，用于存放卡片
-     public  Text coincount; //获取当前可用金币数
-
+     public RectTransform cardPanelRect; //获取cardPanel的RectTransform属性
+     public Text coinCount; //获取当前可用金币数
+     public PrefabEmptyCard emptyCard; //不够三的倍数，进行补卡对象
+     public PrefabCard prefabCard; //卡片预制体实体类对象
+     
      private  string jsonData; //存放json文件中的数据
      private TextAsset jsonFile; //获取json文件
+     
      void Start ()
      {
-         jsonFile = (TextAsset)Resources.Load("data");
-         jsonData=jsonFile.text;
          CreatCard();
      }
-     
-     
+
+    
+     /// <summary> MyMethod is a method in the MyClass class.
+     /// 卡片生成方法
+     /// </summary>
      public  void CreatCard ()
      {
-         int type = 0; //json字段中的type
-         int costGold = 0; //json字段中的costGold
+         int columnCard = 0; //纵向卡片数量；
+         int costGold = 0;   //json字段中的costGold
+         int nullCard = 0;   //填补该数量卡片实现3的倍数
+         int number = 0;     //接收生成的随机数
          string subType = ""; //json字段中的subType
          
-         int nullCard = 0; //填补该数量卡片实现3的倍数
-         int columnCard = 0; //纵向卡片数量；
-         int number = 0; //接收生成的随机数
+         jsonFile = (TextAsset)Resources.Load("data");
+         jsonData=jsonFile.text;
          
          //将json数据格式化
          var jsonNode  = JSONNode.Parse (jsonData);
          JSONArray jsonArray=jsonNode[0].AsArray;
          
-         //循环读取json数据
+         //循环读取json数据，将数据添加到生成的卡片实例中
          foreach (JSONNode jsonField in jsonArray)
          {
-             PerfabCard  CardPrefab = Instantiate(perfabCard,cardPanel.transform);
+             PrefabCard  CardPrefab = Instantiate(prefabCard,cardPanel.transform);
 
              CardPrefab.buyButton.onClick.AddListener(() => { Buy(CardPrefab);});
              
-             type = jsonField["type"];
              costGold = jsonField["costGold"];
              subType = jsonField["subType"].ToString();
              
-             CardPrefab.btnImage.rectTransform.sizeDelta  = new Vector2(49, 44);
              
-             //如果卡片类型为空
+             //根据'subType'字段是否为空，决定卡片要填充的数据
              if (jsonField["subType"] == null)
              { 
                  System.Random random= new System.Random();
@@ -90,21 +91,23 @@ public class CardCreat : MonoBehaviour
          {
              for (int i = 0; i < (3-nullCard); i++)
              {
-                 PerfabEmptyCard EmptyCardPrefab = Instantiate(emptyCard,cardPanel.transform);
+                 PrefabEmptyCard EmptyCardPrefab = Instantiate(emptyCard,cardPanel.transform);
                  EmptyCardPrefab.lose.sprite = Resources.Load<Sprite>("DailySelection/Card/shop_lock");
-                 EmptyCardPrefab.lose.rectTransform.sizeDelta = new Vector2(156, 218);
              }
              
              //根据纵向卡片数量，设置卡片面板的高度
              columnCard = (nullCard + jsonArray.Count) / 3;
-             cardPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(250,600*columnCard);
+             cardPanelRect.sizeDelta = new Vector2(250,600*columnCard);
          }
-         
+       
      }
-     
-     public void Buy(PerfabCard cardPrefab)
+
+     /// <summary> MyMethod is a method in the MyClass class.
+     /// 点击购买，减少相应的金币数并变换购买状态
+     /// </summary>
+     public void Buy(PrefabCard cardPrefab)
      {
-         coincount.text = (int.Parse(coincount.text) - int.Parse(cardPrefab.btnText.text)).ToString();
+         coinCount.text = (int.Parse(coinCount.text) - int.Parse(cardPrefab.btnText.text)).ToString();
          
          cardPrefab.button.SetActive(false);  
          cardPrefab.buy.SetActive(true);
