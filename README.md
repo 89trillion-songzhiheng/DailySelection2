@@ -1,9 +1,9 @@
 # DailySelection2
 
 **整体大纲**
-  1.设计场景，使用UI组件，动态获取资源
-  2.设计脚本对游戏对象，触发事件进行设计
-
+ 1.动态加载卡片资源，根据实际要求进行场景布局。
+ 2.设计游戏脚本，绑定对应的游戏对象，实现事件交互。
+ 
 **目录结构**
 ├── Config
 │   ├── JsonRead.cs  //读取json数据
@@ -41,6 +41,8 @@
      4).CoinPanel //展示金币飞行的面板
      5).CoinTitle //展示当前金币数
      
+  Prefabs: 1.卡片预质体 2.标题预质体 3.空卡预质体 4.宝箱预质体 5.硬币预质体
+  
 **流程图**
 
 ![image](https://github.com/89trillion-songzhiheng/DailySelection2/blob/main/picture/ProcessPicture.png)
