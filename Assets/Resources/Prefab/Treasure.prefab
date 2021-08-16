@@ -330,7 +330,6 @@ GameObject:
   - component: {fileID: 70417128992049844}
   - component: {fileID: 3822971567970390220}
   - component: {fileID: 1038386190574984194}
-  - component: {fileID: 7735779202912497777}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -449,28 +448,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7735779202912497777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9214630019958853999}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46bc3f435b7c94b378591fcf8b859801, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  content: {fileID: 0}
-  coin: {fileID: 8793874277686599010, guid: e3b5dc5d9bfb247228d2ac553dbb2c58, type: 3}
-  coinImage: {fileID: 0}
-  coinNumber: {fileID: 0}
-  coinTitle: {fileID: 0}
-  prefabTreasure: {fileID: 0}
-  shopView: {fileID: 0}
-  treasurePanel: {fileID: 0}
-  viewPort: {fileID: 0}
 --- !u!1001 &1144524058933825980
 PrefabInstance:
   m_ObjectHideFlags: 0
