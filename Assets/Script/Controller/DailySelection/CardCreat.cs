@@ -97,10 +97,14 @@ public class CardCreat : MonoBehaviour
      /// </summary>
      public void Buy(PrefabCard cardPrefab)
      {
-         coinCount.text = (int.Parse(coinCount.text) - int.Parse(cardPrefab.btnText.text)).ToString();
+         if (int.Parse(coinCount.text) - int.Parse(cardPrefab.btnText.text) > 0)
+         {
+             coinCount.text = (int.Parse(coinCount.text) - int.Parse(cardPrefab.btnText.text)).ToString();
          
-         cardPrefab.button.SetActive(false);  
-         cardPrefab.buy.SetActive(true);
+             cardPrefab.button.SetActive(false);  
+             cardPrefab.buy.SetActive(true);
+         }
+         
          
      }
  }
