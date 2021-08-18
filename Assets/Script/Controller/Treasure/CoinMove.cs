@@ -30,7 +30,6 @@ public class CoinMove : MonoBehaviour
     private Vector3 coinPrefabPosition; //硬币预制件实例生成坐标
     private Vector3 tragetPosition; //硬币预制件目标路径
     
-    // Start is called before the first frame update
     void Start()
     {
         //金币移动目标地址
@@ -45,18 +44,20 @@ public class CoinMove : MonoBehaviour
     {
         PrefabTreasure preTreasure = Instantiate(prefabTreasure, treasurePanel.transform);
         
-        preTreasure.button.onClick.AddListener(() => { CreatAndMoveCoin();});
+        preTreasure.button.onClick.AddListener(() => { CreatAndMoveCoin(preTreasure);});
     }
     
     /// <summary> MyMethod is a method in the MyClass class.
     /// 生成金币实例并通过DoTween实现移动
     /// </summary>
-    public void CreatAndMoveCoin()
+    public void CreatAndMoveCoin(PrefabTreasure preTreasure)
     {
         //通过初始化金币生成位置
-        coinPrefabPosition =  prefabTreasure.transform.localPosition + treasurePanel.transform.localPosition + 
-                              content.transform.localPosition + viewPort.transform.localPosition + 
-                              shopView.transform.localPosition;
+        coinPrefabPosition = shopView.transform.localPosition + 
+                             viewPort.transform.localPosition + 
+                             content.transform.localPosition + 
+                             treasurePanel.transform.localPosition + 
+                             preTreasure.transform.localPosition;
         
         //保证金币数最大为15
         if (coinPrefabCount < coinLargeCount) 

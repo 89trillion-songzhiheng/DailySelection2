@@ -59,17 +59,26 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\Config\JsonRead.cs" />
+     <Compile Include="Assets\Script\Controller\Common\TitleCreat.cs" />
+     <Compile Include="Assets\Script\Controller\Common\ViewChange.cs" />
      <Compile Include="Assets\Script\Controller\DailySelection\CardCreat.cs" />
-     <Compile Include="Assets\Script\Controller\TitleCreat.cs" />
      <Compile Include="Assets\Script\Controller\Treasure\CoinMove.cs" />
-     <Compile Include="Assets\Script\Controller\ViewChange.cs" />
-     <Compile Include="Assets\Script\Data\PrefabCard.cs" />
-     <Compile Include="Assets\Script\Data\PrefabTitle.cs" />
-     <Compile Include="Assets\Script\Data\PrefabTreasure.cs" />
+     <Compile Include="Assets\Script\View\PrefabCard.cs" />
+     <Compile Include="Assets\Script\View\PrefabTitle.cs" />
+     <Compile Include="Assets\Script\View\PrefabTreasure.cs" />
      <Compile Include="Assets\ThirdParty\ParsingJSON\SimpleJSON.cs" />
      <Compile Include="Assets\ThirdParty\ParsingJSON\SimpleJSONBinary.cs" />
      <Compile Include="Assets\ThirdParty\ParsingJSON\SimpleJSONDotNetTypes.cs" />
      <Compile Include="Assets\ThirdParty\ParsingJSON\SimpleJSONUnity.cs" />
+     <Compile Include="Assets\ThirdParty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
+     <Compile Include="Assets\ThirdParty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
+     <Compile Include="Assets\ThirdParty\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
+     <Compile Include="Assets\ThirdParty\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+     <Compile Include="Assets\ThirdParty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
+     <Compile Include="Assets\ThirdParty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
+     <Compile Include="Assets\ThirdParty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+     <Compile Include="Assets\ThirdParty\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+     <None Include="Assets\ThirdParty\Plugins\Demigiant\DOTween\readme.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/songzhiheng/DailySelection/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
@@ -323,7 +332,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>/Users/songzhiheng/DailySelection/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+ <HintPath>/Users/songzhiheng/DailySelection/Assets/ThirdParty/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>/Users/songzhiheng/DailySelection/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -679,12 +688,6 @@
  <Reference Include="mscorlib">
  <HintPath>/Applications/Unity/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{FF42A128-754F-7A33-BCF7-AEE7AD73E52C}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

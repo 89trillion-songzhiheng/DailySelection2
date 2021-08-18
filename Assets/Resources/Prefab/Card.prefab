@@ -586,14 +586,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed117c3793e2247f6ab5ae9d02c70053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 7477919365064416868}
-  buyButton: {fileID: 7477919363397000727}
-  button: {fileID: 7477919363397000730}
-  btnText: {fileID: 7477919363505586531}
-  btnImage: {fileID: 7691341216442560553}
-  buy: {fileID: 4141651130172938288}
-  backImage: {fileID: 7477919363769174246}
+  prefabCard: {fileID: 7477919365064416868}
   backColor: {fileID: 2223350860373691077}
+  backImage: {fileID: 7477919363769174246}
+  btnImage: {fileID: 7691341216442560553}
+  btnText: {fileID: 7477919363505586531}
+  button: {fileID: 7477919363397000730}
+  buy: {fileID: 4141651130172938288}
+  buyButton: {fileID: 7477919363397000727}
   cardName: {fileID: 7971457972240873475}
 --- !u!1 &8628431040614480730
 GameObject:

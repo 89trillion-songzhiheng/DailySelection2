@@ -469,9 +469,9 @@ GameObject:
   - component: {fileID: 404354061}
   - component: {fileID: 404354060}
   - component: {fileID: 404354059}
-  - component: {fileID: 404354062}
   - component: {fileID: 404354063}
   - component: {fileID: 404354064}
+  - component: {fileID: 404354062}
   m_Layer: 5
   m_Name: ShopView
   m_TagString: Untagged
@@ -583,7 +583,7 @@ MonoBehaviour:
   cardPanel: {fileID: 1708908839}
   cardPanelRect: {fileID: 1708908840}
   coinCount: {fileID: 6387441099439304015}
-  emptyCard: {fileID: 3697729278312379627, guid: f41861e62a31341d9977f4099548da8c,
+  emptyCard: {fileID: 3626309373737042920, guid: f41861e62a31341d9977f4099548da8c,
     type: 3}
   prefabCard: {fileID: 6924049626861662731, guid: 0159773262d6442799ef9c0c45924ccc,
     type: 3}
@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 720734472}
   - component: {fileID: 720734471}
   - component: {fileID: 720734470}
-  - component: {fileID: 720734469}
+  - component: {fileID: 720734473}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -739,23 +739,6 @@ RectTransform:
   m_AnchoredPosition: {x: 109, y: -144}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &720734469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 720734467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38973be0638246f4806d3c97fe18f33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backButton: {fileID: 720734470}
-  startView: {fileID: 3467325201773809596}
-  backButtonGameObject: {fileID: 720734467}
-  coinTitle: {fileID: 2130395949}
-  shopView: {fileID: 404354057}
 --- !u!114 &720734470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,7 +782,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: f38973be0638246f4806d3c97fe18f33, type: 3}
+      - m_Target: {fileID: 11500000, guid: f20109a3400c04d7689007e65bc692f5, type: 3}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -847,6 +830,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720734467}
   m_CullTransparentMesh: 0
+--- !u!114 &720734473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720734467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20109a3400c04d7689007e65bc692f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backButton: {fileID: 720734470}
+  startButton: {fileID: 3467325200425277222}
+  backObject: {fileID: 720734467}
+  coinTitle: {fileID: 2130395949}
+  startView: {fileID: 3467325201773809596}
+  shopView: {fileID: 404354057}
 --- !u!1 &764889452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,8 +1073,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20109a3400c04d7689007e65bc692f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backButton: {fileID: 720734470}
   startButton: {fileID: 3467325200425277222}
-  backButotn: {fileID: 720734467}
+  backObject: {fileID: 720734467}
   coinTitle: {fileID: 2130395949}
   startView: {fileID: 3467325201773809596}
   shopView: {fileID: 404354057}
@@ -2159,7 +2161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 13333
+  m_Text: 10000
 --- !u!224 &7593697894633799359
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2199,7 +2201,7 @@ GameObject:
   - component: {fileID: 2576669956944190696}
   - component: {fileID: 6387441099439304015}
   m_Layer: 5
-  m_Name: number
+  m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

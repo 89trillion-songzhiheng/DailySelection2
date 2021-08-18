@@ -372,3 +372,6 @@
 /Users/songzhiheng/DailySelection/obj/Debug/Assembly-CSharp.csproj.CopyComplete
 /Users/songzhiheng/DailySelection/obj/Debug/Assembly-CSharp.dll
 /Users/songzhiheng/DailySelection/obj/Debug/Assembly-CSharp.pdb
+/Users/songzhiheng/DailySelection/Temp/bin/Debug/DOTween.dll
+/Users/songzhiheng/DailySelection/Temp/bin/Debug/DOTween.dll.mdb
+/Users/songzhiheng/DailySelection/Temp/bin/Debug/DOTween.xml

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Script.Config;
 using SimpleJSON;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -13,11 +15,17 @@ public class CardCreat : MonoBehaviour
      public RectTransform cardPanelRect; //获取cardPanel的RectTransform属性
      public Text coinCount; //获取当前可用金币数
      public GameObject emptyCard; //补卡对象
-     public JsonRead jsonRead; //json数据读取类
      public PrefabCard prefabCard; //卡片预制体实体类对象
 
      private int rowCount = 3; //每行规定的卡片数量
+     private JSONArray jsonArray; //获取json数据
      
+     private void Awake()
+     {
+         JSONNode jsonNode = JsonRead.GetJsonNode();
+         jsonArray = jsonNode[0].AsArray;
+     }
+
      void Start ()
      {
          CreatCard();
@@ -33,9 +41,7 @@ public class CardCreat : MonoBehaviour
          int nullCard = 0;   //填补该数量卡片实现3的倍数
          int number = 0;     //接收生成的随机数
          string subType = ""; //json字段中的subType
-         
-         JSONArray jsonArray=jsonRead.jsonNode[0].AsArray;
-         
+
          //循环读取json数据，将数据添加到生成的卡片实例中
          foreach (JSONNode jsonField in jsonArray)
          {
@@ -97,15 +103,13 @@ public class CardCreat : MonoBehaviour
      /// </summary>
      public void Buy(PrefabCard cardPrefab)
      {
-         if (int.Parse(coinCount.text) - int.Parse(cardPrefab.btnText.text) > 0)
+         if (int.Parse(coinCount.text) - int.Parse(cardPrefab.btnText.text) >= 0)
          {
              coinCount.text = (int.Parse(coinCount.text) - int.Parse(cardPrefab.btnText.text)).ToString();
          
              cardPrefab.button.SetActive(false);  
              cardPrefab.buy.SetActive(true);
          }
-         
-         
      }
  }
         
