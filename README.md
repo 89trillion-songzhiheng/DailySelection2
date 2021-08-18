@@ -5,11 +5,11 @@
  2.设计游戏脚本，绑定对应的游戏对象，实现事件交互。
  
 **目录结构**  
->├── Config  
+├── Config  
 >>│   ├── JsonRead.cs  //读取json数据  
 >>│   └── JsonRead.cs.meta  
->├── Config.meta  
->├── Controller  
+├── Config.meta  
+├── Controller  
 >>│   ├── DailySelection  
 >>│   │   ├── CardCreat.cs  //创建卡片  
 >>│   │   └── CardCreat.cs.meta  
@@ -22,15 +22,15 @@
 >>│   ├── Treasure.meta  
 >>│   ├── ViewChange.cs  
 >>│   └── ViewChange.cs.meta  
->├── Controller.meta  
->├── Data  
+├── Controller.meta  
+├── Data  
 >>│   ├── PrefabCard.cs //卡片预置体  
 >>│   ├── PrefabCard.cs.meta  
 >>│   ├── PrefabTitle.cs //标题预置体  
 >>│   ├── PrefabTitle.cs.meta  
 >>│   ├── PrefabTreasure.cs //宝箱预置体  
 >>│   └── PrefabTreasure.cs.meta  
->└── Data.meta  
+└── Data.meta  
  
 **界面结构**
   Hierarchy：
