@@ -31,8 +31,8 @@
  │   ├── PrefabTreasure.cs //宝箱预置体  
  │   └── PrefabTreasure.cs.meta  
 └── Data.meta  
-|
-| |
+|. 
+| |. 
 **界面结构**
   Hierarchy：
     1.Canvas: 
