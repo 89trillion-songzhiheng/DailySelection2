@@ -5,7 +5,7 @@
  2.设计游戏脚本，绑定对应的游戏对象，实现事件交互。
  
 **目录结构**  
->Config  
+>>Config  
 >>JsonRead.cs  //读取json数据  
 >>JsonRead.cs.meta  
 >Config.meta  
