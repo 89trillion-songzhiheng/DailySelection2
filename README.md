@@ -8,7 +8,7 @@
 >├── Config  
 >>│   ├── JsonRead.cs  //读取json数据  
 >>│   └── JsonRead.cs.meta  
->>├── Config.meta  
+>├── Config.meta  
 >├── Controller  
 >>│   ├── DailySelection  
 >>│   │   ├── CardCreat.cs  //创建卡片  
