@@ -32,16 +32,21 @@
 >>PrefabTreasure.cs.meta  
 >Data.meta  
  
-**界面结构**
-  Hierarchy：
-    1.Canvas: 
-     1).StartView //开始界面
-     2).ShopView。//购买界面
-     3).BackButton //回退到开始界面
-     4).CoinPanel //展示金币飞行的面板
-     5).CoinTitle //展示当前金币数
+**界面结构**. 
+  Hierarchy:  
+    1.Canvas:  
+     1).StartView //开始界面. 
+     2).ShopView。//购买界面. 
+     3).BackButton //回退到开始界面. 
+     4).CoinPanel //展示金币飞行的面板. 
+     5).CoinTitle //展示当前金币数. 
      
-  Prefabs: 1.卡片预置体 2.标题预置体 3.空卡预置体 4.宝箱预置体 5.硬币预置体
+  Prefabs:
+    1.Card:卡片预置体 
+    2.Title:标题预置体 
+    3.EmptyCard空卡预置体 
+    4.Treasure:宝箱预置体 
+    5.CoinImg硬币预置体
   
 **流程图**  
 
