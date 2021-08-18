@@ -45,4 +45,4 @@
   
 **流程图**  
 
-![image](https://github.com/89trillion-songzhiheng/DailySelection2/blob/main/picture/ProcessPicture.png)
+![image](https://github.com/89trillion-songzhiheng/DailySelection2/blob/main/Picture/newTrepic.png)
